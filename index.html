@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <title>How normal am I?</title>
         <script>
             const questions = [
                 {
@@ -9,7 +10,7 @@
                     answers: [
                         {
                             "text": "Frozone",
-                            "score": "wherewolf",
+                            "score": "werewolf",
                         },
                         {
                             "text": "Marie Curie",
@@ -30,10 +31,10 @@
                         },
                         {
                             text: "The blue one",
-                            score: "wherewolf"
+                            score: "werewolf"
                         },
                         {
-                            text: "the red one",
+                            text: "The red one",
                             score: 'abnormal'
                         },
                         {
@@ -47,7 +48,7 @@
                     answers: [
                         {
                             text: '100 meters',
-                            score: 'wherewolf'
+                            score: 'werewolf'
                         },
                         {
                             text: '1000 meters',
@@ -68,7 +69,7 @@
                         },
                         {
                             text: 'Lion',
-                            score: 'wherewolf',
+                            score: 'werewolf',
                         },
                         {
                             text: 'Rhinoceros',
@@ -81,7 +82,7 @@
                     ]
                 },
                 {
-                    question: 'Would you rather be forced to leave your home country and never be allowed back or never be albe to leave again?',
+                    question: 'Would you rather be forced to leave your home country and never be allowed back or never be able to leave again?',
                     answers: [
                         {
                             text: "I'd rather stay forever",
@@ -97,12 +98,12 @@
                     question: 'Which character from "Friends" do you most relate to?',
                     answers: [
                         {
-                            text: "Um IDK the tall one",
+                            text: "Um, IDK the tall one",
                             score: 'abnormal'
                         },
                         {
                             text: 'The bartender',
-                            score: 'wherewolf'
+                            score: 'werewolf'
                         },
                         {
                             text: 'The painting on the wall of the bar',
@@ -111,19 +112,19 @@
                     ]
                 },
                 {
-                    question: 'If you knew you where going to die, what would your last words be?',
+                    question: 'If you knew you were going to die, what would your last words be?',
                     answers: [
                         {
                             text: "\"The treasure is hidden in the... the...\"",
                             score: 'abnormal'
                         },
                         {
-                            text: "\"It was me who murdered the count\"",
+                            text: "\"It was me who took the last cookie at the reunion in 2007\"",
                             score: 'normal'
                         },
                         {
                             text: '"Find me a partner and tell them I love them"',
-                            score: 'wherewolf'
+                            score: 'werewolf'
                         },
                         {
                             text: '"I\'m not going to die, I\'m going to live forever\"',
@@ -132,7 +133,7 @@
                     ]
                 },
                 {
-                    question: 'You can swap the names of any two countries on earth. Which ones do you pick?',
+                    question: 'You can swap the names of any two countries on Earth. Which ones do you pick?',
                     answers: [
                         {
                             text: 'Uruguay and Paraguay',
@@ -144,7 +145,7 @@
                         },
                         {
                             text: 'India and Indonesia',
-                            score: 'wherewolf'
+                            score: 'werewolf'
                         },
                         {
                             text: 'United Kingdom and United States',
@@ -157,6 +158,7 @@
                     ]
                 }
             ]
+
         </script>
         <style>
             * {
@@ -304,7 +306,7 @@
             const default_scores = Object.freeze({
                 normal: 0,
                 abnormal: 0,
-                wherewolf: 0
+                werewolf: 0
             });
 
             let question_index = -1;
