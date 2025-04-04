@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            const questions = [
+                {
+                    question: "Who would you rather go on a date with?",
+                    answers: [
+                        {
+                            "text": "Frozone",
+                            "score": "wherewolf",
+                        },
+                        {
+                            "text": "Marie Curie",
+                            "score": "abnormal"
+                        },
+                        {
+                            "text": "1000 Crabs",
+                            "score": "normal"
+                        }
+                    ]
+                },
+                {
+                    question: "Which Disney princess would you rather go on a date with?",
+                    answers: [
+                        {
+                            text: "The green one",
+                            score: "normal"
+                        },
+                        {
+                            text: "The blue one",
+                            score: "wherewolf"
+                        },
+                        {
+                            text: "the red one",
+                            score: 'abnormal'
+                        },
+                        {
+                            text: 'I don\'t recognize any of these options',
+                            score: 'normal'
+                        }
+                    ]
+                },
+                {
+                    question: 'How tall is the Eiffel Tower?',
+                    answers: [
+                        {
+                            text: '100 meters',
+                            score: 'wherewolf'
+                        },
+                        {
+                            text: '1000 meters',
+                            score: 'normal'
+                        },
+                        {
+                            text: '10,000 meters',
+                            score: 'abnormal'
+                        }
+                    ]
+                },
+                {
+                    question: 'If you had to irreversibly turn into one animal, which animal would you pick?',
+                    answers: [
+                        {
+                            text: 'Chicken',
+                            score: 'normal',
+                        },
+                        {
+                            text: 'Lion',
+                            score: 'wherewolf',
+                        },
+                        {
+                            text: 'Rhinoceros',
+                            score: 'abnormal'
+                        },
+                        {
+                            text: 'Fly',
+                            score: 'normal'
+                        }
+                    ]
+                },
+                {
+                    question: 'Would you rather be forced to leave your home country and never be allowed back or never be albe to leave again?',
+                    answers: [
+                        {
+                            text: "I'd rather stay forever",
+                            score: 'normal'
+                        },
+                        {
+                            text: "I'd rather leave forever",
+                            score: 'abnormal'
+                        }
+                    ]
+                },
+                {
+                    question: 'Which character from "Friends" do you most relate to?',
+                    answers: [
+                        {
+                            text: "Um IDK the tall one",
+                            score: 'abnormal'
+                        },
+                        {
+                            text: 'The bartender',
+                            score: 'wherewolf'
+                        },
+                        {
+                            text: 'The painting on the wall of the bar',
+                            score: 'abnormal'
+                        }
+                    ]
+                },
+                {
+                    question: 'If you knew you where going to die, what would your last words be?',
+                    answers: [
+                        {
+                            text: "\"The treasure is hidden in the... the...\"",
+                            score: 'abnormal'
+                        },
+                        {
+                            text: "\"It was me who murdered the count\"",
+                            score: 'normal'
+                        },
+                        {
+                            text: '"Find me a partner and tell them I love them"',
+                            score: 'wherewolf'
+                        },
+                        {
+                            text: '"I\'m not going to die, I\'m going to live forever\"',
+                            score: 'normal'
+                        }
+                    ]
+                },
+                {
+                    question: 'You can swap the names of any two countries on earth. Which ones do you pick?',
+                    answers: [
+                        {
+                            text: 'Uruguay and Paraguay',
+                            score: 'abnormal'
+                        },
+                        {
+                            text: 'Austria and Australia',
+                            score: 'normal'
+                        },
+                        {
+                            text: 'India and Indonesia',
+                            score: 'wherewolf'
+                        },
+                        {
+                            text: 'United Kingdom and United States',
+                            score: 'abnormal'
+                        },
+                        {
+                            text: 'North Korea and South Korea',
+                            score: 'normal'
+                        }
+                    ]
+                }
+            ]
+        </script>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+
+                &:nth-child(1) {
+                    --index-color: green;
+                }
+
+                &:nth-child(2) {
+                    --index-color: blue;
+                }
+
+                &:nth-child(3) {
+                    --index-color: #888800;
+                }
+
+                &:nth-child(4) {
+                    --index-color: violet;
+                }
+
+                &:nth-child(5) {
+                    --index-color: red;
+                }
+            }
+
+            body {
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e2ff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                font-family: sans-serif;
+            }
+
+            .question {
+                width: 100vw;
+                height: 100vh;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                padding: 4rem;
+            }
+
+            .question-enter {
+                animation: enter ease-in-out 0.5s forwards;
+            }
+
+            .question-exit {
+                animation: exit ease-in-out 0.5s forwards;
+            }
+
+            @keyframes enter {
+                from {
+                    transform: translateX(100vw);
+                }
+
+                to {
+                    transform: translateX(0)
+                }
+            }
+
+            @keyframes exit {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(-100vw)
+                }
+            }
+
+            #main {
+                position: relative;
+            }
+
+            button, .option {
+                padding: 2rem;
+                background-color: var(--index-color);
+                color: white;
+                border: none;
+                font-size: 2rem;
+                border-radius: 4rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: black;
+                }
+            }
+
+            .options {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .stats {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                & .stat {
+                    height: 3rem;
+                    position: relative;
+                    background-color: black;
+                    overflow: hidden;
+
+                    --stat-color: var(--index-color);
+
+                    & .stat-name {
+                        position: absolute;
+                        font-size: 2rem;
+                        left: 0;
+                        top: 0.5 rem;
+                        z-index: 5;
+                        color: white;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    & .bar {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 3rem;
+                        background-color: var(--stat-color);
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div class="question title-screen">
+                <h1>How normal are you?</h1>
+
+                <button id="start-button">Start</button>
+            </div>
+        </div>
+        <script>
+            const mainElement = document.getElementById('main');
+
+            const default_scores = Object.freeze({
+                normal: 0,
+                abnormal: 0,
+                wherewolf: 0
+            });
+
+            let question_index = -1;
+            let scores = {...default_scores};
+
+            const start = () => {
+                question_index = -1;
+                scores = {...default_scores};
+
+                nextQuestion();
+            }
+
+            const displayResults = () => {
+                const div = document.createElement('div');
+                div.classList.add('question', 'question-enter');
+
+                const scoresEntries = Object.entries(scores);
+                const bestScore = scoresEntries.reduce((a,b)=>a[1]>b[1]?a:b);
+
+                const title = document.createElement('h1');
+                title.textContent = `You are mostly ${bestScore[0]}`;
+
+                div.appendChild(title);
+
+                const stats = document.createElement('div');
+                stats.classList.add('stats');
+
+                for (let [statName, score] of scoresEntries) {
+                    const stat = document.createElement('div');
+                    stat.classList.add('stat');
+                    
+                    const name = document.createElement('div');
+                    name.classList.add('stat-name');
+                    name.textContent = statName;
+                    stat.appendChild(name);
+
+                    const bar = document.createElement('div');
+                    bar.classList.add('bar');
+                    bar.style.width = `${score * 100 / questions.length}%`;
+
+                    stat.appendChild(bar);
+                    stats.appendChild(stat);
+                }
+                div.appendChild(stats);
+
+                const shareButton = document.createElement('button');
+                shareButton.textContent = 'Copy Results';
+
+                shareButton.addEventListener('click', ()=>{
+
+                    navigator.clipboard.writeText(`I am mostly ${bestScore[0]}\n${
+                        scoresEntries.map(
+                            ([statName, score], index) => {
+                                return `${statName}${' '.repeat(10-statName.length)} ${['🟥', '🟩', '🟫'][index].repeat(score)}`
+                            }
+                        ).join('\n')
+                    }\nGet your own score at https://mousetail.github.io/how-normal-am-i`)
+                });
+                div.appendChild(shareButton);
+
+                return div;
+            }
+
+            const formatQuestion = (question) => {
+                const newQuestionDiv = document.createElement('div');
+                newQuestionDiv.classList.add('question', 'question-enter');
+
+                const title = document.createElement('h1');
+                title.textContent = questions[question_index].question;
+
+                newQuestionDiv.appendChild(title);
+
+                const options = document.createElement('div');
+                options.classList.add('options');
+
+                for (option of questions[question_index].answers) {
+                    if (!Object.prototype.hasOwnProperty.call(default_scores, option.score)) {
+                        throw new Error('question missing '+options.score+' '+option.text);
+                    };
+
+                    const optionElement = document.createElement('div');
+                    optionElement.classList.add('option');
+                    optionElement.textContent = option.text;
+
+                    optionElement.addEventListener('click', ()=>{
+                        scores[option.score]+=1;
+                        nextQuestion();
+                    });
+                    options.appendChild(optionElement);
+                };
+                newQuestionDiv.appendChild(options);
+                return newQuestionDiv;
+            }
+
+            const nextQuestion = () => {
+                const currentQuestion = mainElement.firstElementChild;
+
+                question_index += 1;
+
+                let newQuestionDiv;
+                if (question_index >= questions.length)  {
+                    newQuestionDiv = displayResults(currentQuestion)
+                } else {
+                    newQuestionDiv = formatQuestion(questions[question_index]);
+                }
+
+                mainElement.appendChild(newQuestionDiv);
+                currentQuestion.classList.add('question-exit');
+                window.setTimeout(()=>{
+                    currentQuestion.parentElement.removeChild(currentQuestion);
+                    newQuestionDiv.classList.remove('question-enter');
+                }, 500);
+
+            }
+
+            document.getElementById('start-button').addEventListener('click', start);
+
+
+        </script>
+    </body>
+</html>
