@@ -9,16 +9,16 @@
                     question: "Who would you rather go on a date with?",
                     answers: [
                         {
-                            "text": "Frozone",
-                            "score": "werewolf",
+                            text: "Frozone",
+                            score: "werewolf",
                         },
                         {
-                            "text": "Marie Curie",
-                            "score": "abnormal"
+                            text: "Marie Curie",
+                            score: "abnormal"
                         },
                         {
-                            "text": "1000 Crabs",
-                            "score": "normal"
+                            text: "1000 Crabs",
+                            score: "normal"
                         }
                     ]
                 },
@@ -418,7 +418,7 @@
                 const options = document.createElement('div');
                 options.classList.add('options');
 
-                for (option of questions[question_index].answers) {
+                questions[question_index].answers.forEach(option=>{
                     if (!Object.prototype.hasOwnProperty.call(default_scores, option.score)) {
                         throw new Error('question missing '+options.score+' '+option.text);
                     };
@@ -432,7 +432,7 @@
                         nextQuestion();
                     });
                     options.appendChild(optionElement);
-                };
+                });
                 newQuestionDiv.appendChild(options);
                 return newQuestionDiv;
             }
