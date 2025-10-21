@@ -1,3 +1,10 @@
+import D66Image from './images/d66_edited.png';
+import PvdDImage from './images/Partij voor de Dieren.png';
+import spImage from './images/sp.svg';
+import vijftigPlusImage from './images/5-min.png';
+import pvvImage from './images/PVV.svg';
+import BbbImage from './images/bbb.svg';
+import DrentheImage from './images/drenthe.png';
 
 const mainElement = document.getElementById('main');
 
@@ -12,13 +19,13 @@ const default_scores = Object.freeze({
 });
 
 const partyImages = {
-    "D66": "./images/d66_edited.png",
-    "PvdD": "./images/Partij voor de Dieren.png",
-    "SP": "./images/sp.svg",
-    "50+": "./images/5-min.png",
-    "PVV": "./images/PVV.svg",
-    "BBB": "./images/bbb.svg",
-    'Drenthe': "./images/drenthe.png"
+    "D66": D66Image,
+    "PvdD": PvdDImage,
+    "SP": spImage,
+    "50+": vijftigPlusImage,
+    "PVV": pvvImage,
+    "BBB": BbbImage,
+    'Drenthe': DrentheImage
 }
 
 const partyNames = {
