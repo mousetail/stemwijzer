@@ -2,465 +2,228 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>How normal am I?</title>
+        <title>Voor welke partij moet ik stemmen?</title>
         <script>
             const questions = [
                 {
-                    question: "Who would you rather go on a date with?",
+                    question: "Aan welke kant willen we de noordzee leggen?",
                     answers: [
                         {
-                            text: "Frozone",
-                            score: "werewolf",
+                            text: "Aan het westen",
+                            score: {
+                                "SP": "De noordzee staat prima waar die nu is. Los van de cosequenties van iedere visser of boer is een zee verplaatsen niet technish haalbaar en ook niet nuttig.",
+                            }
                         },
                         {
-                            text: "Marie Curie",
-                            score: "abnormal"
+                            text: "Aan het oosten",
+                            score: {"PVV": "Op het moment komen soms mensen onze oost grens over. Als we Duitsland onderwater zetten wordt dat een stuk lastiger.",
+                                "BBB": "Als we de Noordzee leegpompen, kunnen we daar lekker racen. Wellicht ruimte voor een F1 cirquit."
+
+                            }
                         },
                         {
-                            text: "1000 Crabs",
-                            score: "normal"
+                            text: "Aan het zuiden",
+                            score: {
+                                "50+": "Vroeger woonde ik aan het strand maar nu woon ik bij Eindhoven. Ik wil weer strand zodat ik kan spelen met mijn broertje."
+                            }
+                        },
+                    ]
+                },
+                {
+                    question: "Wat voor extra bonussen moeten wij invoeren voor huiseigenaars omdat we ze zo waarderen voor veel geld hebben?",
+                    answers: [
+                        {
+                            text: "1 quariljard euro per maand",
+                            score: {
+                                "50+": "Ik kan niet zo veel tellen maar mijn ouders zeggen dat je daar veel snoep voor kan kopen.",
+                            }
+                        },
+                        {
+                            text: "Een vrijbrief voor misdaad",
+                            score: {
+                                "D66": "Wij vinden het ondersteunen van de criminaliteit heel belangrijk. Huiseigenaren buiten nu al structureel mensen uit die hun rechten niet kennen, "
+                                +" deze manier wordt dat makkelijker gemaakt.",
+                                "BBB": "We zouden het lieft overal de snelheidslimieten weghalen maar een vrijstelling werkt ook",
+                                "PVV": "Vooral buidenlandse studenten worden geexploiteerd. Goed zo. Nu kan het nog makkelijker."
+                            }
+                        },
+                        {
+                            text: "Niks",
+                            score: {
+                                "SP": "Een huis hebben heeft al genoeg voordelen"
+                            }
+                        },
+                    ]
+                },
+                {
+                    question: 'Wat moet er gebeuren met mensen die het niet met de regering eens zijn?',
+                    answers: [
+                        {
+                            text: 'Stevige Waarshuwing',
+                            score: {
+                                'BBB': 'Met een hoop race-trekkers voor z\'n huis rijden werkt meestal al genoeg'
+                            }
+                        },
+                        {
+                            text: 'Een nier afstaan',
+                            score: {
+                                'D66': 'Ik verzamel nieren, ik heb en nu 12. Ik zou graag mijn verzameling uitbreiden'
+                            }
+                        },
+                        {
+                            text: 'Verhuizen naar Kenia',
+                            score: {
+                                'PvdD': 'In Kenia heb je veel zeldzame soorten struiken, en ze kunnen hard hulp gebruiken bij die beschermen.'
+                            }
                         }
                     ]
                 },
                 {
-                    question: "Which Disney princess do you most relate to?",
+                    question: 'Waar moeten vliegvelden komen in Nederland?',
                     answers: [
                         {
-                            text: "The green one",
-                            score: "normal"
+                            text: "Lelystad en Eindhoven",
+                            score: {
+                                'SP': 'Geluidsoverlast bij Schiphol blijft voor problemen zorgen. We zien liever dat Eindhoven en Lelystad deze problemen ervaren.'
+                            }
                         },
                         {
-                            text: "The blue one",
-                            score: "werewolf"
+                            text: "Elke gemeente",
+                            score: {
+                                'BBB': 'Nu mijn rijbewijst is afgepakt kan ik moeiljk op veel plekken komen. Een vliegtuig zou een opossing bieden'
+                            }
                         },
                         {
-                            text: "The red one",
-                            score: 'abnormal'
-                        },
-                        {
-                            text: 'I don\'t recognize any of these options',
-                            score: 'normal'
+                            text: "Helmond",
+                            score: {
+                                'D66': 'Dan worden de vlieg kaartjes voor mij goedkoper'
+                            }
                         }
                     ]
                 },
                 {
-                    question: 'How tall is the Eiffel Tower?',
+                    question: 'Wie mogen een dak hebben?',
                     answers: [
                         {
-                            text: '100 meters',
-                            score: 'werewolf'
+                            text: "Alleen mensen wiens opa een huis hadden",
+                            score: {
+                                'PVV': 'Respect voor ouderen is belangrijk. Als je opa geen huis had in nederland, is het dan respectvol om zelf wel ergens te wonen?'
+                            }
                         },
                         {
-                            text: '1000 meters',
-                            score: 'normal'
+                            text: 'Iedereen',
+                            score: {
+                                'PvdD': 'Moet uiteraard wel een huis zijn gemaakt uit puur dierlijke producten.'
+                            }
                         },
                         {
-                            text: '10,000 meters',
-                            score: 'abnormal'
+                            text: 'Iedereen behalve mijn broertje',
+                            score: {
+                                '50+': 'Mijn broertje steelt mijn spullen. Hij verdient geen huis',
+                                'BBB': 'Mijn broertje had de politie gebeld toen ik naar huis wilde rijden na maar 6 glaasjes. Dat was niet aardig.'
+                            }
                         }
                     ]
                 },
                 {
-                    question: 'If you had to irreversibly turn into one animal, which animal would you pick?',
+                    question: 'Hoe wil je propoganda verbeteren zodat ook jongeren gebrainwashed worden?',
                     answers: [
                         {
-                            text: 'Chicken',
-                            score: 'normal',
+                            text: "Skateboarden",
+                            score: {
+                            },
                         },
                         {
-                            text: 'Lion',
-                            score: 'werewolf',
+                            text: "Snoep uitdelen",
+                            score: {
+                                '50+': 'Ik denk dat iedereen wel van snoep houdt'
+                            }
                         },
                         {
-                            text: 'Rhinoceros',
-                            score: 'abnormal'
+                            text: 'Niew sociaal media platform',
+                            score: {
+                                'PVV': 'Op deze manier kunnen we er voor zorgen dat jongeren geen gevaarlijke woke ideeën binnenkrijgen'
+                            }
                         },
-                        {
-                            text: 'Fly',
-                            score: 'normal'
-                        }
                     ]
                 },
                 {
-                    question: 'Would you rather be forced to leave your home country and never be allowed back or never be able to leave again?',
+                    question: 'Welke nieuwe programmas moet de NPO uitzenden?',
                     answers: [
                         {
-                            text: "I'd rather stay forever",
-                            score: 'normal'
+                            text: 'F1',
+                            score: {
+                                'BBB': 'Wij willen 1 miljard euro investeren zodat the NPO weer F1 mag uitzenden'
+                            }
                         },
                         {
-                            text: "I'd rather leave forever",
-                            score: 'abnormal'
-                        }
+                            text: 'Boer zoekt Vrouw',
+                            score: {
+                                'BBB': 'Dit is mijn guilty pleasure'
+                            }
+                        },
                     ]
                 },
                 {
-                    question: 'Which character from "Friends" do you most relate to?',
+                    question: 'Welke onderzoeksrichtingen moet de regering in investeren?',
                     answers: [
                         {
-                            text: "Um, IDK the tall one",
-                            score: 'abnormal'
+                            text: 'Genetish testen',
+                            score: {
+                                'PVV': 'Wij willen efficient kunnen checken of iedereen wel echt nederlands is en iedereen die niet de test slaagt uitzetten naar Duitsland'
+                            }
                         },
                         {
-                            text: 'The bartender',
-                            score: 'werewolf'
+                            text: 'Zelf-rijdende autos',
+                            score: {
+                                'BBB': 'Liefst met mini-bar en een beetje snel.'
+                            }
                         },
                         {
-                            text: 'The painting on the wall of the bar',
-                            score: 'abnormal'
-                        }
+                            text: 'Teleportatie en portalen',
+                            score: {
+                                'D66': 'Helemaal via Helmond moeten rijzen elke dag is moeilijk. En je moet niet weten hoe erg de files zijn aan de andere kant.',
+                                'PVV': 'Zo kunnen we mensen efficienter het land uit zetten',
+                                'SP': 'Luchtvaart is goed voor de wereldvrede maar sclecht voor het klimaat. Wellicht biedt teleportatie een oplossing'
+                            }
+                        },
                     ]
                 },
                 {
-                    question: 'If you knew you were going to die, what would your last words be?',
+                    question: 'Welke gassen zou je het lieft aan de atmosfeer toevoegen?',
                     answers: [
                         {
-                            text: "\"The treasure is hidden in the... the...\"",
-                            score: 'abnormal'
-                        },
-                        {
-                            text: "\"It was me who took the last cookie at the reunion in 2007\"",
-                            score: 'normal'
-                        },
-                        {
-                            text: '"Find me a partner and tell them I love them"',
-                            score: 'werewolf'
-                        },
-                        {
-                            text: '"I\'m not going to die, I\'m going to live forever\"',
-                            score: 'normal'
-                        }
-                    ]
-                },
-                {
-                    question: 'Physically, how far apart are the furthest two languages you speak?',
-                    answers: [
-                        {
-                            text: 'I only speak one language',
-                            score: 'normal'
-                        },
-                        {
-                            text: '<1000 km',
-                            score: 'abnormal'
-                        },
-                        {
-                            text: '1000 - 2000 km',
-                            score: 'werewolf'
-                        },
-                        {
-                            text: '2000+ km',
-                            score: 'abnormal'
-                        }
-                    ]
-                },
-                {
-                    question: 'You can swap the names of any two countries on Earth. Which ones do you pick?',
-                    answers: [
-                        {
-                            text: 'Uruguay and Paraguay',
-                            score: 'abnormal'
-                        },
-                        {
-                            text: 'Austria and Australia',
-                            score: 'normal'
-                        },
-                        {
-                            text: 'India and Indonesia',
-                            score: 'werewolf'
-                        },
-                        {
-                            text: 'United Kingdom and United States',
-                            score: 'abnormal'
-                        },
-                        {
-                            text: 'North Korea and South Korea',
-                            score: 'normal'
-                        }
-                    ]
-                },
-                {
-                    question: 'How many Delfts blue tiles do you own?',
-                    answers: [
-                        {
-                            text: 'At least one',
-                            score: 'werewolf',
+                            text: 'Stikstof',
+                            score: {
+                                'BBB': 'Van NOx (stikstof) gaat je auto sneller'
+                            },
                         }, {
-                            text: 'None, but I want one',
-                            score: 'normal'
+                            text: 'Helium',
+                            score: {
+                                '50+': 'Daar ga ik grappig van praten'
+                            }
                         }, {
-                            text: 'I prefer Amstardam\'s red',
-                            score: 'abnormal'
+                            text: 'Zwavelzuur',
+                            score: {
+                                'D66': 'Dit herrinert mij aan thuis',
+                                'PvdD': 'De bedrijgde Oostvaarderzzwammen hebben dit echt nodig om de winter door te komen.'
+                            }
                         }
                     ]
                 }
             ]
 
         </script>
-        <style>
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-
-                &:nth-child(1) {
-                    --index-color: green;
-                }
-
-                &:nth-child(2) {
-                    --index-color: blue;
-                }
-
-                &:nth-child(3) {
-                    --index-color: #888800;
-                }
-
-                &:nth-child(4) {
-                    --index-color: violet;
-                }
-
-                &:nth-child(5) {
-                    --index-color: red;
-                }
-            }
-
-            body {
-                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e2ff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-                font-family: sans-serif;
-            }
-
-            .question {
-                width: 100vw;
-                height: 100vh;
-                display: grid;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                left: 0;
-                top: 0;
-
-                padding: 4rem;
-            }
-
-            .question-enter {
-                animation: enter ease-in-out 0.5s forwards;
-            }
-
-            .question-exit {
-                animation: exit ease-in-out 0.5s forwards;
-            }
-
-            @keyframes enter {
-                from {
-                    transform: translateX(100vw);
-                }
-
-                to {
-                    transform: translateX(0)
-                }
-            }
-
-            @keyframes exit {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(-100vw)
-                }
-            }
-
-            #main {
-                position: relative;
-            }
-
-            button, .option {
-                padding: 2rem;
-                background-color: var(--index-color);
-                color: white;
-                border: none;
-                font-size: 2rem;
-                border-radius: 4rem;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: black;
-                }
-            }
-
-            .options {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .stats {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-
-                & .stat {
-                    height: 3rem;
-                    position: relative;
-                    background-color: black;
-                    overflow: hidden;
-
-                    --stat-color: var(--index-color);
-
-                    & .stat-name {
-                        position: absolute;
-                        font-size: 2rem;
-                        left: 0;
-                        top: 0.5 rem;
-                        z-index: 5;
-                        color: white;
-                        text-align: center;
-                        width: 100%;
-                    }
-
-                    & .bar {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        height: 3rem;
-                        background-color: var(--stat-color);
-                    }
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div id="main">
             <div class="question title-screen">
-                <h1>How normal are you?</h1>
+                <h1>Voor welke partij moet ik stemmen?</h1>
 
                 <button id="start-button">Start</button>
             </div>
         </div>
-        <script>
-            const mainElement = document.getElementById('main');
-
-            const default_scores = Object.freeze({
-                normal: 0,
-                abnormal: 0,
-                werewolf: 0
-            });
-
-            let question_index = -1;
-            let scores = {...default_scores};
-
-            const start = () => {
-                question_index = -1;
-                scores = {...default_scores};
-
-                nextQuestion();
-            }
-
-            const displayResults = () => {
-                const div = document.createElement('div');
-                div.classList.add('question', 'question-enter');
-
-                const scoresEntries = Object.entries(scores);
-                const bestScore = scoresEntries.reduce((a,b)=>a[1]>b[1]?a:b);
-
-                const title = document.createElement('h1');
-                title.textContent = `You are mostly ${bestScore[0]}`;
-
-                div.appendChild(title);
-
-                const stats = document.createElement('div');
-                stats.classList.add('stats');
-
-                for (let [statName, score] of scoresEntries) {
-                    const stat = document.createElement('div');
-                    stat.classList.add('stat');
-                    
-                    const name = document.createElement('div');
-                    name.classList.add('stat-name');
-                    name.textContent = statName;
-                    stat.appendChild(name);
-
-                    const bar = document.createElement('div');
-                    bar.classList.add('bar');
-                    bar.style.width = `${score * 100 / questions.length}%`;
-
-                    stat.appendChild(bar);
-                    stats.appendChild(stat);
-                }
-                div.appendChild(stats);
-
-                const shareButton = document.createElement('button');
-                shareButton.textContent = 'Copy Results';
-
-                shareButton.addEventListener('click', ()=>{
-
-                    navigator.clipboard.writeText(`I am mostly ${bestScore[0]}\n${
-                        scoresEntries.map(
-                            ([statName, score], index) => {
-                                return `${statName}${' '.repeat(10-statName.length)} ${['🟥', '🟩', '🟫'][index].repeat(score)}`
-                            }
-                        ).join('\n')
-                    }\nGet your own score at https://mousetail.github.io/how-normal-am-i`)
-                });
-                div.appendChild(shareButton);
-
-                return div;
-            }
-
-            const formatQuestion = (question) => {
-                const newQuestionDiv = document.createElement('div');
-                newQuestionDiv.classList.add('question', 'question-enter');
-
-                const title = document.createElement('h1');
-                title.textContent = questions[question_index].question;
-
-                newQuestionDiv.appendChild(title);
-
-                const options = document.createElement('div');
-                options.classList.add('options');
-
-                questions[question_index].answers.forEach(option=>{
-                    if (!Object.prototype.hasOwnProperty.call(default_scores, option.score)) {
-                        throw new Error('question missing '+options.score+' '+option.text);
-                    };
-
-                    const optionElement = document.createElement('div');
-                    optionElement.classList.add('option');
-                    optionElement.textContent = option.text;
-
-                    optionElement.addEventListener('click', ()=>{
-                        scores[option.score]+=1;
-                        nextQuestion();
-                    });
-                    options.appendChild(optionElement);
-                });
-                newQuestionDiv.appendChild(options);
-                return newQuestionDiv;
-            }
-
-            const nextQuestion = () => {
-                const currentQuestion = mainElement.firstElementChild;
-
-                question_index += 1;
-
-                let newQuestionDiv;
-                if (question_index >= questions.length)  {
-                    newQuestionDiv = displayResults(currentQuestion)
-                } else {
-                    newQuestionDiv = formatQuestion(questions[question_index]);
-                }
-
-                mainElement.appendChild(newQuestionDiv);
-                currentQuestion.classList.add('question-exit');
-                window.setTimeout(()=>{
-                    currentQuestion.parentElement.removeChild(currentQuestion);
-                    newQuestionDiv.classList.remove('question-enter');
-                }, 500);
-
-            }
-
-            document.getElementById('start-button').addEventListener('click', start);
-
-
-        </script>
+        <script src="lib.js"></script>
     </body>
 </html>
