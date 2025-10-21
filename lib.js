@@ -78,7 +78,7 @@ const displayResults = () => {
 
     shareButton.addEventListener('click', ()=>{
 
-        navigator.clipboard.writeText(`Ik ben het grotendeels eens met ${bestScore[0]}\n${
+        navigator.clipboard.writeText(`Ik ben het grotendeels eens met ${partyNames[bestScore[0]]}\n${
             scoresEntries.slice(0,3).map(
                 ([statName, score], index) => {
                     return `${partyNames[statName]}${' '.repeat(10-statName.length)} ${['🟥', '🟩', '🟫'][index].repeat(score)}`
