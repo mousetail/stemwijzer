@@ -7,7 +7,8 @@ const default_scores = Object.freeze({
     "SP": 0,
     "50+": 0,
     "PVV": 0,
-    "BBB": 0
+    "BBB": 0,
+    'Drenthe': 0
 });
 
 const partyImages = {
@@ -16,7 +17,8 @@ const partyImages = {
     "SP": "./images/sp.svg",
     "50+": "./images/5-min.png",
     "PVV": "./images/PVV.svg",
-    "BBB": "./images/bbb.svg"
+    "BBB": "./images/bbb.svg",
+    'Drenthe': "./images/drenthe.png"
 }
 
 const partyNames = {
@@ -25,7 +27,8 @@ const partyNames = {
     "SP": "SimP",
     "50+": "5-",
     "PVV": "Partij voor Facisme",
-    "BBB": "Bewust Bezopen Bestuurders"
+    "BBB": "Bewust Bezopen Bestuurders",
+    'Drenthe': 'Provincie Drente'
 }
 
 let question_index = -1;
@@ -78,7 +81,7 @@ const displayResults = () => {
 
     shareButton.addEventListener('click', ()=>{
 
-        navigator.clipboard.writeText(`Ik ben het grotendeels eens met ${partyNames[bestScore[0]]}\n${
+        navigator.clipboard.writeText(`Ik ga op "${partyNames[bestScore[0]]}" stemmen deze verkiezingen\n${
             scoresEntries.slice(0,3).map(
                 ([statName, score], index) => {
                     return `${partyNames[statName]}${' '.repeat(10-statName.length)} ${['🟥', '🟩', '🟫'][index].repeat(score)}`
@@ -153,6 +156,8 @@ const showPartyOptions = (optionElementMap) => {
 
             const image = document.createElement('img');
             image.src=partyImages[party];
+            image.title = partyNames[party];
+            image.alt = partyNames[party];
             element.appendChild(image);
 
             const paragraph = document.createElement('p');
